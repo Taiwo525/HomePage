@@ -1,0 +1,79 @@
+﻿@model StayCation.Models.Customers
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+<!--</head> -->
+<body>
+
+       <!-- Sing in  Form -->
+        <div class="overlay">
+            <!-- LOGN IN FORM by Omar Dsoky -->
+        <form action="@Url.Action("Login","LogSign")" method="post" >
+                <!--   con = Container  for items in the form-->
+                <div class="con">
+                    <!--     Start  header Content  -->
+                    <header class="head-form">
+                        <h2>Log In</h2>
+                        <!--     A welcome message or an explanation of the login form -->
+                        <p>login here using your username and password</p>
+                    </header>
+                    <!--     End  header Content  -->
+                    <br>
+                    <div class="field-set">
+
+                        <!--   user name -->
+                        <span class="input-item">
+                            <i class="fa fa-user-circle"></i>
+                        </span>
+                        <!--   user name Input-->
+                        @*<input class="form-input" id="txt-input" type="text" placeholder="UserName" required>*@
+                        @Html.TextBoxFor(model => model.Email, new{@class = "form-control",  placeholder="Email", required = "required"})
+
+                        <br>
+
+                        <!--   Password -->
+
+                        <span class="input-item">
+                            <i class="fa fa-key"></i>
+                        </span>
+                        <!--   Password Input-->
+                        @*<input class="form-input" type="password" placeholder="Password" id="pwd" name="password" required>*@
+                        @Html.TextBoxFor(model => model.PassWord, new{@class = "form-control",  placeholder="Password", required = "required"})
+
+                        <!--      Show/hide password  -->
+                        <span>
+                            <i class="fa fa-eye" aria-hidden="true" type="button" id="eye"></i>
+                        </span>
+
+
+                        <br>
+                        <button class="log-in" type="submit" style="background-color: #0000ff"> Log In </button>
+                    </div>
+
+                    <!--   other buttons -->
+                    <div class="other">
+                        <!--      Forgot Password button-->
+                        <button class="btn submits frgt-pass">Forgot Password</button>
+                        <!--     Sign Up button -->
+                        <button class="btn submits sign-up">
+                            Sign Up
+                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                        </button>
+                        
+                    </div>
+
+                   
+                </div>
+
+                
+            </form>
+        </div>
+
+  
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
